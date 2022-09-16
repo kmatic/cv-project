@@ -12,7 +12,7 @@ class Personal extends React.Component {
     }
 
     render() {
-        const personal = this.props;
+        const { personal } = this.props;
 
         return (
             <div>

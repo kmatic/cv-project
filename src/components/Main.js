@@ -40,14 +40,12 @@ class Main extends React.Component {
     }
 
     handlePersonal(e) {
-        console.log(e);
         this.setState({
             personal: {
                 ...this.state.personal,
                 [e.target.name]: e.target.value,
             }
         });
-        console.log(this.state.personal);
     }
 
     render() {
@@ -60,7 +58,11 @@ class Main extends React.Component {
                     education={education}
                     handlePersonal={this.handlePersonal}
                 />
-                <Preview />
+                <Preview
+                    personal={personal}
+                    experiences={experiences}
+                    education={education}
+                />
             </div>
         );
     }

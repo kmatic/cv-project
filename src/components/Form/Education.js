@@ -1,4 +1,5 @@
 import React from "react";
+import EducationItem from "./EducationItem";
 
 class Education extends React.Component {
     // constructor() {
@@ -9,33 +10,7 @@ class Education extends React.Component {
         return (
             <div>
                 <p>Education</p>
-                <form>
-                    <input
-                        type='text'
-                        id='programInput'
-                        name='programInput'
-                        placeholder='Program'
-                    />
-                    <input
-                        type='text'
-                        id='uniInput'
-                        name='uniInput'
-                        placeholder='University'
-                    />
-                    <input
-                        type='text'
-                        id='uniStartInput'
-                        name='uniStartInput'
-                        placeholder='Start Date'
-                    />
-                    <input
-                        type='text'
-                        id='uniEndInput'
-                        name='uniEndInput'
-                        placeholder='End Date'
-                    />
-                    <button>Delete</button>
-                </form>
+                <EducationItem />
                 <button>Add</button>
             </div>
         );
