@@ -4,16 +4,31 @@ import Experience from "./Experience";
 import Personal from "./Personal";
 
 class Form extends React.Component {
-    // constructor() {
-    //     super();
-    // }
+    constructor(props) {
+        super(props);
+
+        this.handlePersonal = this.handlePersonal.bind(this);
+    }
+
+    handlePersonal(e) {
+        this.props.handlePersonal(e);
+    }
 
     render() {
+        const { personal, experiences, education } = this.props
+
         return (
             <div>
-                <Personal />
-                <Experience />
-                <Education />
+                <Personal 
+                    personal={personal}
+                    handlePersonal={this.handlePersonal}
+                />
+                <Experience
+                    experiences={experiences}
+                />
+                <Education
+                    education={education}
+                />
             </div>
         );
     }

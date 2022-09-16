@@ -1,50 +1,70 @@
 import React from "react";
 
 class Personal extends React.Component {
-    // constructor() {
-    //     super();
-    // }
+    constructor(props) {
+        super(props);
+
+        this.handlePersonal = this.handlePersonal.bind(this);
+    }
+
+    handlePersonal(e) {
+        this.props.handlePersonal(e);
+    }
 
     render() {
+        const personal = this.props;
+
         return (
             <div>
                 <form>
                     <p>Personal Information</p>
                     <input
                         type='text'
-                        id='nameInput'
-                        name='nameInput'
+                        id='name'
+                        name='name'
                         placeholder='Name'
+                        value={personal.name}
+                        onChange={this.handlePersonal}
                     />
                     <input
                         type='text'
-                        id='titleInput'
-                        name='titleInput'
+                        id='title'
+                        name='title'
                         placeholder='Title'
+                        value={personal.title}
+                        onChange={this.handlePersonal}
                     />
                     <input
                         type='tel'
-                        id='phoneInput'
-                        name='phoneInput'
+                        id='phone'
+                        name='phone'
                         placeholder='Phone Number'
+                        value={personal.phone}
+                        onChange={this.handlePersonal}
                     />
                     <input
                         type='email'
-                        id='emailInput'
-                        name='emailInput'
+                        id='email'
+                        name='email'
                         placeholder='Email Address'
+                        value={personal.email}
+                        onChange={this.handlePersonal}
                     />
                     <input
                         type='text'
-                        id='locationInput'
-                        name='locationInput'
+                        id='location'
+                        name='location'
                         placeholder='Location'
+                        value={personal.location}
+                        onChange={this.handlePersonal}
                     />
                     <input
                         type='url'
-                        id='webInput'
-                        name='webInput'
+                        id='website'
+                        name='website'
                         placeholder='Website'
+                        value={personal.website}
+                        onChange={this.handlePersonal}
                     />
                 </form>
             </div>

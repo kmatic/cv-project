@@ -32,15 +32,34 @@ class Main extends React.Component {
                 start: '',
                 end: '',
             },
-            experience: [],
+            experiences: [],
             education: [],
         }
+
+    this.handlePersonal = this.handlePersonal.bind(this);
+    }
+
+    handlePersonal(e) {
+        console.log(e);
+        this.setState({
+            personal: {
+                ...this.state.personal,
+                [e.target.name]: e.target.value,
+            }
+        });
+        console.log(this.state.personal);
     }
 
     render() {
+        const { personal, experiences, education } = this.state
         return (
             <div>
-                <Form />
+                <Form 
+                    personal={personal}
+                    experiences={experiences}
+                    education={education}
+                    handlePersonal={this.handlePersonal}
+                />
                 <Preview />
             </div>
         );
