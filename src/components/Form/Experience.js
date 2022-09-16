@@ -43,6 +43,7 @@ class Experience extends React.Component {
                     <textarea
                         id='workDescription'
                         name='workDescription'
+                        placeholder='Description'
                     />
                     <button>Delete</button>
                 </form>
