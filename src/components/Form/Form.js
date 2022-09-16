@@ -1,4 +1,5 @@
 import React from "react";
+import Experience from "./Experience";
 import Personal from "./Personal";
 
 class Form extends React.Component {
@@ -10,6 +11,7 @@ class Form extends React.Component {
         return (
             <div>
                 <Personal />
+                <Experience />
             </div>
         );
     }
