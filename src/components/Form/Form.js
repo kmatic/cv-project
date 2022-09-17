@@ -8,10 +8,15 @@ class Form extends React.Component {
         super(props);
 
         this.handlePersonal = this.handlePersonal.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
     }
 
     handlePersonal(e) {
         this.props.handlePersonal(e);
+    }
+
+    handleAdd(e) {
+        this.props.handleAdd(e);
     }
 
     render() {
@@ -25,9 +30,11 @@ class Form extends React.Component {
                 />
                 <Experience
                     experiences={experiences}
+                    handleAdd={this.handleAdd}
                 />
                 <Education
                     education={education}
+                    handleAdd={this.handleAdd}
                 />
             </div>
         );

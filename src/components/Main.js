@@ -37,6 +37,7 @@ class Main extends React.Component {
         }
 
     this.handlePersonal = this.handlePersonal.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
     }
 
     handlePersonal(e) {
@@ -48,6 +49,36 @@ class Main extends React.Component {
         });
     }
 
+    handleAdd(e) {
+        e.preventDefault();
+        if (e.target.name === 'experienceItem') {
+            this.setState({
+                experienceItem: {
+                    id: uuidv4(),
+                    position: '',
+                    company: '',
+                    location: '',
+                    start: '',
+                    end: '',
+                    desc: '',
+                },
+                experiences: [...this.state.experiences, this.state.experienceItem],
+            });
+        } else if (e.target.name === 'educationItem') {
+            this.setState({
+                educationItem: {
+                    id: uuidv4(),
+                    program: '',
+                    university: '',
+                    start: '',
+                    end: '',
+                },
+                education: [...this.state.education, this.state.educationItem],
+            });
+        }
+        console.log(this.state);
+    }
+
     render() {
         const { personal, experiences, education } = this.state
         return (
@@ -57,6 +88,7 @@ class Main extends React.Component {
                     experiences={experiences}
                     education={education}
                     handlePersonal={this.handlePersonal}
+                    handleAdd={this.handleAdd}
                 />
                 <Preview
                     personal={personal}
