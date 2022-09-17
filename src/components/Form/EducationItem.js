@@ -6,37 +6,37 @@ class EducationItem extends React.Component {
     }
 
     render() {
-        const { educationItem, handleRemove } = this.props;
+        const { educationItem, handleRemove, handleEducation } = this.props;
         return (
             <div>
                 <form>
                     <input
                         type='text'
-                        id='programInput'
-                        name='programInput'
+                        name='program'
                         placeholder='Program'
                         value={educationItem.program}
+                        onChange={(e) => handleEducation(e, educationItem.id)}
                     />
                     <input
                         type='text'
-                        id='uniInput'
-                        name='uniInput'
+                        name='university'
                         placeholder='University'
                         value={educationItem.university}
+                        onChange={(e) => handleEducation(e, educationItem.id)}
                     />
                     <input
                         type='text'
-                        id='uniStartInput'
-                        name='uniStartInput'
+                        name='start'
                         placeholder='Start Date'
                         value={educationItem.start}
+                        onChange={(e) => handleEducation(e, educationItem.id)}
                     />
                     <input
                         type='text'
-                        id='uniEndInput'
-                        name='uniEndInput'
+                        name='end'
                         placeholder='End Date'
                         value={educationItem.end}
+                        onChange={(e) => handleEducation(e, educationItem.id)}
                     />
                     <button name='eduDel' onClick={(e) => handleRemove(e, educationItem.id)}>
                         Delete

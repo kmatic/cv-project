@@ -7,6 +7,7 @@ class Education extends React.Component {
 
         this.handleAdd = this.handleAdd.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
+        this.handleEducation = this.handleEducation.bind(this);
     }
 
     handleAdd(e) {
@@ -15,6 +16,10 @@ class Education extends React.Component {
 
     handleRemove(e, id) {
         this.props.handleRemove(e, id);
+    }
+
+    handleEducation(e, id) {
+        this.props.handleEducation(e, id);
     }
 
     render() {
@@ -27,6 +32,7 @@ class Education extends React.Component {
                     <EducationItem 
                         educationItem={educationItem}
                         handleRemove={this.handleRemove}
+                        handleEducation={this.handleEducation}
                     />
                     )
                 })}

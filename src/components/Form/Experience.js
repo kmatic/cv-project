@@ -7,6 +7,7 @@ class Experience extends React.Component {
 
         this.handleAdd = this.handleAdd.bind(this);
         this.handleRemove = this.handleRemove.bind(this);
+        this.handleExperience = this.handleExperience.bind(this);
     }
 
     handleAdd(e) {
@@ -15,6 +16,10 @@ class Experience extends React.Component {
 
     handleRemove(e, id) {
         this.props.handleRemove(e, id);
+    }
+
+    handleExperience(e, id) {
+        this.props.handleExperience(e, id);
     }
 
     render() {
@@ -27,6 +32,7 @@ class Experience extends React.Component {
                     <ExperienceItem
                         experience={experience}
                         handleRemove={this.handleRemove}
+                        handleExperience={this.handleExperience}
                     />
                     )
                 })}

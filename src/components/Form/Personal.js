@@ -20,7 +20,6 @@ class Personal extends React.Component {
                     <p>Personal Information</p>
                     <input
                         type='text'
-                        id='name'
                         name='name'
                         placeholder='Name'
                         value={personal.name}
@@ -28,7 +27,6 @@ class Personal extends React.Component {
                     />
                     <input
                         type='text'
-                        id='title'
                         name='title'
                         placeholder='Title'
                         value={personal.title}
@@ -36,7 +34,6 @@ class Personal extends React.Component {
                     />
                     <input
                         type='tel'
-                        id='phone'
                         name='phone'
                         placeholder='Phone Number'
                         value={personal.phone}
@@ -44,7 +41,6 @@ class Personal extends React.Component {
                     />
                     <input
                         type='email'
-                        id='email'
                         name='email'
                         placeholder='Email Address'
                         value={personal.email}
@@ -52,7 +48,6 @@ class Personal extends React.Component {
                     />
                     <input
                         type='text'
-                        id='location'
                         name='location'
                         placeholder='Location'
                         value={personal.location}
@@ -60,7 +55,6 @@ class Personal extends React.Component {
                     />
                     <input
                         type='url'
-                        id='website'
                         name='website'
                         placeholder='Website'
                         value={personal.website}

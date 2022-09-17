@@ -3,54 +3,53 @@ import React from "react";
 class ExperienceItem extends React.Component {
     constructor(props) {
         super(props);
-
     }
 
     render() {
-        const { experience, handleRemove } = this.props;
+        const { experience, handleRemove, handleExperience } = this.props;
         return (
             <div>
                 <form>
                     <input
                         type='text'
-                        id='positionInput'
-                        name='positionInput'
+                        name='position'
                         placeholder='Position'
-                        // value={experience.position}
+                        value={experience.position}
+                        onChange={(e) => handleExperience(e, experience.id)}
                     />
                     <input
                         type='text'
-                        id='companyInput'
-                        name='companyInput'
+                        name='company'
                         placeholder='Company'
-                        // value={experience.company}
+                        value={experience.company}
+                        onChange={(e) => handleExperience(e, experience.id)}
                     />
                     <input
                         type='text'
-                        id='workLocationInput'
-                        name='workLocationInput'
+                        name='location'
                         placeholder='Location'
-                        // value={experience.location}
+                        value={experience.location}
+                        onChange={(e) => handleExperience(e, experience.id)}
                     />
                     <input
                         type='text'
-                        id='workStartInput'
-                        name='workStartInput'
+                        name='start'
                         placeholder='Start Date'
-                        // value={experience.start}
+                        value={experience.start}
+                        onChange={(e) => handleExperience(e, experience.id)}
                     />
                     <input
                         type='text'
-                        id='workEndInput'
-                        name='workEndInput'
+                        name='end'
                         placeholder='End Date'
-                        // value={experience.end}
+                        value={experience.end}
+                        onChange={(e) => handleExperience(e, experience.id)}
                     />
                     <textarea
-                        id='workDescription'
-                        name='workDescription'
+                        name='desc'
                         placeholder='Description'
-                        // value={experience.desc}
+                        value={experience.desc}
+                        onChange={(e) => handleExperience(e, experience.id)}
                     />
                     <button name='expDel' onClick={(e) => handleRemove(e, experience.id)}>
                         Delete

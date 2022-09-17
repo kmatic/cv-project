@@ -39,6 +39,8 @@ class Main extends React.Component {
     this.handlePersonal = this.handlePersonal.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleExperience = this.handleExperience.bind(this);
+    this.handleEducation = this.handleEducation.bind(this);
     }
 
     handlePersonal(e) {
@@ -48,6 +50,32 @@ class Main extends React.Component {
                 [e.target.name]: e.target.value,
             }
         });
+    }
+
+    handleExperience(e, id) {
+        let updatedExperiences = this.state.experiences.map(experience => {
+            if (experience.id === id) {
+                return {...experience, [e.target.name]: e.target.value};
+            }
+            return experience;
+        });
+
+        this.setState({
+            experiences: updatedExperiences,
+        })
+    }
+
+    handleEducation(e, id) {
+        let updatedEducation = this.state.education.map(educationItem => {
+            if (educationItem.id === id) {
+                return {...educationItem, [e.target.name]: e.target.value};
+            }
+            return educationItem;
+        });
+
+        this.setState({
+            education: updatedEducation,
+        })
     }
 
     handleAdd(e) {
@@ -101,6 +129,8 @@ class Main extends React.Component {
                     experiences={experiences}
                     education={education}
                     handlePersonal={this.handlePersonal}
+                    handleExperience={this.handleExperience}
+                    handleEducation={this.handleEducation}
                     handleAdd={this.handleAdd}
                     handleRemove={this.handleRemove}
 
