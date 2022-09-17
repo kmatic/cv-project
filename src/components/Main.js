@@ -38,6 +38,7 @@ class Main extends React.Component {
 
     this.handlePersonal = this.handlePersonal.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
     }
 
     handlePersonal(e) {
@@ -76,7 +77,19 @@ class Main extends React.Component {
                 education: [...this.state.education, this.state.educationItem],
             });
         }
-        console.log(this.state);
+    }
+
+    handleRemove(e, id) {
+        e.preventDefault();
+        if (e.target.name === 'expDel') {
+            this.setState({
+                experiences: this.state.experiences.filter(experience => experience.id !== id),
+            });
+        } else if (e.target.name === 'eduDel') {
+            this.setState({
+                education: this.state.education.filter(educationItem => educationItem.id !== id),
+            })
+        }
     }
 
     render() {
@@ -89,6 +102,8 @@ class Main extends React.Component {
                     education={education}
                     handlePersonal={this.handlePersonal}
                     handleAdd={this.handleAdd}
+                    handleRemove={this.handleRemove}
+
                 />
                 <Preview
                     personal={personal}

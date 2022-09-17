@@ -6,10 +6,15 @@ class Education extends React.Component {
         super(props);
 
         this.handleAdd = this.handleAdd.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
     handleAdd(e) {
         this.props.handleAdd(e);
+    }
+
+    handleRemove(e, id) {
+        this.props.handleRemove(e, id);
     }
 
     render() {
@@ -19,7 +24,10 @@ class Education extends React.Component {
                 <p>Education</p>
                 {education.map((educationItem) => {
                     return (
-                    <EducationItem />
+                    <EducationItem 
+                        educationItem={educationItem}
+                        handleRemove={this.handleRemove}
+                    />
                     )
                 })}
                 <button onClick={this.handleAdd} name='educationItem'>

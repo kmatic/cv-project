@@ -6,10 +6,15 @@ class Experience extends React.Component {
         super(props);
 
         this.handleAdd = this.handleAdd.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
     handleAdd(e) {
         this.props.handleAdd(e);
+    }
+
+    handleRemove(e, id) {
+        this.props.handleRemove(e, id);
     }
 
     render() {
@@ -19,7 +24,10 @@ class Experience extends React.Component {
                 <p>Work Experience</p>
                 {experiences.map((experience) => {
                     return (
-                    <ExperienceItem />
+                    <ExperienceItem
+                        experience={experience}
+                        handleRemove={this.handleRemove}
+                    />
                     )
                 })}
                 <button onClick={this.handleAdd} name='experienceItem'>

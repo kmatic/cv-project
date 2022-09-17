@@ -9,6 +9,7 @@ class Form extends React.Component {
 
         this.handlePersonal = this.handlePersonal.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
     }
 
     handlePersonal(e) {
@@ -17,6 +18,10 @@ class Form extends React.Component {
 
     handleAdd(e) {
         this.props.handleAdd(e);
+    }
+
+    handleRemove(e, id) {
+        this.props.handleRemove(e, id);
     }
 
     render() {
@@ -31,10 +36,12 @@ class Form extends React.Component {
                 <Experience
                     experiences={experiences}
                     handleAdd={this.handleAdd}
+                    handleRemove={this.handleRemove}
                 />
                 <Education
                     education={education}
                     handleAdd={this.handleAdd}
+                    handleRemove={this.handleRemove}
                 />
             </div>
         );
