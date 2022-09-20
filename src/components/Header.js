@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Header.css'
+import styled from 'styled-components';
 
 class Header extends React.Component {
     // constructor() {
@@ -8,11 +8,25 @@ class Header extends React.Component {
 
     render() {
         return (
-            <header className='header'>
+            <HeaderWrapper className='header'>
                 <p>CV GENERATOR</p>
-            </header>
+            </HeaderWrapper>
         );
     }
 }
+
+const HeaderWrapper = styled.header`
+    background-color: #363740;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > p {
+        margin: 0;
+        font-size: 3rem;
+    }
+`;
 
 export default Header

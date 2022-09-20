@@ -148,9 +148,15 @@ class Main extends React.Component {
 
 const Div = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: start;
+    justify-content: center;
     margin: 30px;
+    gap: 25px;
+
+    @media (max-width: 1600px) {
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 export default Main
