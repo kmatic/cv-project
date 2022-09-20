@@ -2,6 +2,7 @@ import React from "react";
 import Form from "./Form/Form";
 import Preview from "./Preview/Preview";
 import { v4 as uuidv4 } from 'uuid';
+import styled from 'styled-components';
 
 class Main extends React.Component {
     constructor() {
@@ -123,7 +124,7 @@ class Main extends React.Component {
     render() {
         const { personal, experiences, education } = this.state
         return (
-            <div>
+            <Div>
                 <Form 
                     personal={personal}
                     experiences={experiences}
@@ -140,9 +141,16 @@ class Main extends React.Component {
                     experiences={experiences}
                     education={education}
                 />
-            </div>
+            </Div>
         );
     }
 }
+
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px;
+`;
 
 export default Main

@@ -1,5 +1,7 @@
 import React from "react";
 import Personal from "./Personal";
+import Experience from "./Experience";
+import Education from "./Education";
 
 class Preview extends React.Component {
     constructor(props) {
@@ -13,6 +15,12 @@ class Preview extends React.Component {
             <div>
                 <Personal
                     personal={personal}
+                />
+                <Experience
+                    experiences={experiences}
+                />
+                <Education
+                    education={education}
                 />
             </div>
         )

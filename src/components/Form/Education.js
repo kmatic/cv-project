@@ -1,5 +1,6 @@
 import React from "react";
 import EducationItem from "./EducationItem";
+import styled from 'styled-components';
 
 class Education extends React.Component {
     constructor(props) {
@@ -25,8 +26,8 @@ class Education extends React.Component {
     render() {
         const { education } = this.props;
         return (
-            <div>
-                <p>Education</p>
+            <Div>
+                <Title>Education</Title>
                 {education.map((educationItem) => {
                     return (
                     <EducationItem 
@@ -36,12 +37,32 @@ class Education extends React.Component {
                     />
                     )
                 })}
-                <button onClick={this.handleAdd} name='educationItem'>
+                <Button onClick={this.handleAdd} name='educationItem'>
                     Add
-                </button>
-            </div>
+                </Button>
+            </Div>
         );
     }
 }
+
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+`;
+
+const Button = styled.button`
+    padding: 8px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+`;
+
+const Title = styled.h2`
+    text-align: left;
+    margin-bottom: 0;
+`;
 
 export default Education
