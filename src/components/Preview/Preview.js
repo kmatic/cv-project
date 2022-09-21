@@ -4,28 +4,20 @@ import Experience from "./Experience";
 import Education from "./Education";
 import styled from 'styled-components';
 
-class Preview extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const { personal, experiences, education } = this.props
-        
-        return (
-            <Div>
-                <Personal
-                    personal={personal}
-                />
-                <Experience
-                    experiences={experiences}
-                />
-                <Education
-                    education={education}
-                />
-            </Div>
-        )
-    }
+const Preview = ({ personal, experiences, education }) => {
+    return (
+        <Div>
+            <Personal
+                personal={personal}
+            />
+            <Experience
+                experiences={experiences}
+            />
+            <Education
+                education={education}
+            />
+        </Div>
+    );
 }
 
 const Div = styled.div`

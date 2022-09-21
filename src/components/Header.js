@@ -1,18 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-class Header extends React.Component {
-    // constructor() {
-    //     super();
-    // }
-
-    render() {
-        return (
-            <HeaderWrapper className='header'>
-                <p>CV GENERATOR</p>
-            </HeaderWrapper>
-        );
-    }
+const Header = () => {
+    return (
+        <HeaderWrapper>
+            <p>CV GENERATOR</p>
+        </HeaderWrapper>
+    );
 }
 
 const HeaderWrapper = styled.header`

@@ -1,52 +1,45 @@
 import React from "react";
 import styled from 'styled-components';
 
-class EducationItem extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const { educationItem, handleRemove, handleEducation } = this.props;
-        return (
-            <div>
-                <Form>
-                    <Input
-                        type='text'
-                        name='program'
-                        placeholder='Program'
-                        value={educationItem.program}
-                        onChange={(e) => handleEducation(e, educationItem.id)}
-                    />
-                    <Input
-                        type='text'
-                        name='university'
-                        placeholder='University'
-                        value={educationItem.university}
-                        onChange={(e) => handleEducation(e, educationItem.id)}
-                    />
-                    <Input
-                        type='text'
-                        name='start'
-                        placeholder='Start Date'
-                        value={educationItem.start}
-                        onChange={(e) => handleEducation(e, educationItem.id)}
-                    />
-                    <Input
-                        type='text'
-                        name='end'
-                        placeholder='End Date'
-                        value={educationItem.end}
-                        onChange={(e) => handleEducation(e, educationItem.id)}
-                    />
-                    <Button name='eduDel' onClick={(e) => handleRemove(e, educationItem.id)}>
-                        Delete
-                    </Button>
-                </Form>
-            </div>
-        );
-    }
-}
+const EducationItem = ({ educationItem, handleRemove, handleEducation }) => {
+    return (
+        <div>
+            <Form>
+                <Input
+                    type='text'
+                    name='program'
+                    placeholder='Program'
+                    value={educationItem.program}
+                    onChange={(e) => handleEducation(e, educationItem.id)}
+                />
+                <Input
+                    type='text'
+                    name='university'
+                    placeholder='University'
+                    value={educationItem.university}
+                    onChange={(e) => handleEducation(e, educationItem.id)}
+                />
+                <Input
+                    type='text'
+                    name='start'
+                    placeholder='Start Date'
+                    value={educationItem.start}
+                    onChange={(e) => handleEducation(e, educationItem.id)}
+                />
+                <Input
+                    type='text'
+                    name='end'
+                    placeholder='End Date'
+                    value={educationItem.end}
+                    onChange={(e) => handleEducation(e, educationItem.id)}
+                />
+                <Button name='eduDel' onClick={(e) => handleRemove(e, educationItem.id)}>
+                    Delete
+                </Button>
+            </Form>
+        </div>
+    );
+} 
 
 const Form = styled.form`
     display: flex;

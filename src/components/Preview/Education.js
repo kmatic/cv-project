@@ -1,33 +1,26 @@
 import React from "react";
 import styled from 'styled-components';
 
-class Education extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const { education } = this.props;
-
-        return (
-          <Div>
+const Education = ({ education }) => {
+    return (
+        <Div>
             <h1>EDUCATION</h1>
-                <EducationWrapper>
-                  {education.map((educationItem) => {
-                      return (
-                      <EducationItemWrapper>
-                          <p>{educationItem.university}</p>
-                          <p>
-                            {educationItem.program} | {educationItem.start} &#8211; {educationItem.end}
-                          </p>
-                      </EducationItemWrapper>
-                      )
-                  })}
-                </EducationWrapper>
-          </Div>  
-        );
-    }
-}
+            <EducationWrapper>
+                {education.map((educationItem) => {
+                    return (
+                        <EducationItemWrapper>
+                            <p>{educationItem.university}</p>
+                            <p>
+                                {educationItem.program} | {educationItem.start}{" "}
+                                &#8211; {educationItem.end}
+                            </p>
+                        </EducationItemWrapper>
+                    );
+                })}
+            </EducationWrapper>
+        </Div>
+    );
+};
 
 const Div = styled.div`
     > h1 {

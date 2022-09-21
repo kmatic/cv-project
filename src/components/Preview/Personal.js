@@ -2,41 +2,33 @@ import React from "react";
 import styled from 'styled-components';
 import { FaPhone, FaEnvelope, FaLocationArrow, FaLinkedinIn } from 'react-icons/fa';
 
-class Personal extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        const { personal } = this.props;
-
-        return (
-            <MainDiv>
-                <NameTitle>
-                    <h1>{personal.name}</h1>
-                    <h2>{personal.title}</h2>
-                </NameTitle>
-                <Info>
-                    <div>
-                        <FaPhone />
-                        <p>{personal.phone}</p>
-                    </div>
-                    <div>
-                        <FaEnvelope />
-                        <p>{personal.email}</p>
-                    </div>
-                    <div>
-                        <FaLocationArrow />
-                        <p>{personal.location}</p>
-                    </div>
-                    <div>
-                        <FaLinkedinIn />
-                        <p>{personal.website}</p>
-                    </div>
-                </Info>
-            </MainDiv>
-        );
-    }
+const Personal = ({ personal }) => {
+    return (
+        <MainDiv>
+            <NameTitle>
+                <h1>{personal.name}</h1>
+                <h2>{personal.title}</h2>
+            </NameTitle>
+            <Info>
+                <div>
+                    <FaPhone />
+                    <p>{personal.phone}</p>
+                </div>
+                <div>
+                    <FaEnvelope />
+                    <p>{personal.email}</p>
+                </div>
+                <div>
+                    <FaLocationArrow />
+                    <p>{personal.location}</p>
+                </div>
+                <div>
+                    <FaLinkedinIn />
+                    <p>{personal.website}</p>
+                </div>
+            </Info>
+        </MainDiv>
+    );
 }
 
 const MainDiv = styled.div`

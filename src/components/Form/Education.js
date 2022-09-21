@@ -2,47 +2,24 @@ import React from "react";
 import EducationItem from "./EducationItem";
 import styled from 'styled-components';
 
-class Education extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.handleAdd = this.handleAdd.bind(this);
-        this.handleRemove = this.handleRemove.bind(this);
-        this.handleEducation = this.handleEducation.bind(this);
-    }
-
-    handleAdd(e) {
-        this.props.handleAdd(e);
-    }
-
-    handleRemove(e, id) {
-        this.props.handleRemove(e, id);
-    }
-
-    handleEducation(e, id) {
-        this.props.handleEducation(e, id);
-    }
-
-    render() {
-        const { education } = this.props;
-        return (
-            <Div>
-                <Title>Education</Title>
-                {education.map((educationItem) => {
-                    return (
-                    <EducationItem 
-                        educationItem={educationItem}
-                        handleRemove={this.handleRemove}
-                        handleEducation={this.handleEducation}
-                    />
-                    )
-                })}
-                <Button onClick={this.handleAdd} name='educationItem'>
-                    Add
-                </Button>
-            </Div>
-        );
-    }
+const Education = ({ education, handleAdd, handleRemove, handleEducation}) => {
+    return (
+        <Div>
+            <Title>Education</Title>
+            {education.map((educationItem) => {
+                return (
+                <EducationItem 
+                    educationItem={educationItem}
+                    handleRemove={handleRemove}
+                    handleEducation={handleEducation}
+                />
+                )
+            })}
+            <Button onClick={handleAdd} name='educationItem'>
+                Add
+            </Button>
+        </Div>
+    );
 }
 
 const Div = styled.div`
